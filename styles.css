@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #111;
     color: #fff;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 /* Global styles */
@@ -37,7 +37,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-section .content {
@@ -48,18 +48,29 @@ body {
 .hero-section h1 {
     font-size: 4em;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 20px #00e5ff;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff, 0 0 40px #00e5ff, 0 0 50px #00e5ff, 0 0 60px #00e5ff, 0 0 70px #00e5ff;
+    }
+    to {
+        text-shadow: 0 0 20px #00e5ff, 0 0 30px #00e5ff, 0 0 40px #00e5ff, 0 0 50px #00e5ff, 0 0 60px #00e5ff, 0 0 70px #00e5ff, 0 0 80px #00e5ff;
+    }
 }
 
 .hero-section p {
     font-size: 1.5em;
     margin-bottom: 30px;
+    color: #00e5ff;
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #fa5c5c; /* Neon red */
+    background-color: #ff1493;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -67,7 +78,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #ff4f4f; /* Lighter red on hover */
+    background-color: #ff69b4;
     transform: scale(1.05);
 }
 
@@ -80,7 +91,7 @@ body {
 }
 
 .character-card {
-    background-color: #333;
+    background-color: #222;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -90,12 +101,13 @@ body {
 
 .character-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
 }
 
 .character-card h3 {
     font-size: 2em;
     margin-bottom: 10px;
+    color: #00e5ff;
 }
 
 /* Screenshot carousel */
@@ -115,14 +127,14 @@ body {
 
 .screenshot-carousel img:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
 }
 
 /* Video container */
 .video-container {
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%; /* Aspect ratio for 16:9 video */
+    padding-top: 56.25%;
     margin-top: 30px;
 }
 
@@ -141,5 +153,26 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #222;
-    color: #999; /* Lighter gray text color */
+    color: #999;
+}
+
+/* Cursor tracker */
+.cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff1493;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+.cursor2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 229, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.2s, opacity 0.2s;
 }
